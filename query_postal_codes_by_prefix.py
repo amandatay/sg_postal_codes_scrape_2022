@@ -74,9 +74,16 @@ if __name__ == "__main__":
     import sys
 
     prefix = sys.argv[1]
-    prefix = str(prefix)
     
-    get_all_postal_codes_by_prefix(prefix)
+    if ',' in prefix:
+        print('List provided, running in batches.')
+        prefix_list = prefix.split(',')
+        for pr in prefix_list:
+            prefix = str(pr)
+            get_all_postal_codes_by_prefix(pr)
+    else:
+        prefix = str(prefix)
+        get_all_postal_codes_by_prefix(prefix)
 
 #get_all_postal_codes_by_prefix('02')
 # postal district 01
