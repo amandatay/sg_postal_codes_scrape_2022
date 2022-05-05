@@ -13,11 +13,7 @@ import itertools
 import time
 import os
 
-os.chdir('/Users/amandatay/doc/ds/02_postal_code_api')
-
-
-#postal_list = ['528540','380013','520840','000000']
-
+os.chdir('/Users/amandatay/doc/ds/02_postal_code_api') # change this path
 #ref: https://en.wikipedia.org/wiki/Postal_codes_in_Singapore
 
 
@@ -41,7 +37,6 @@ def getcoordinates(address):
 def get_all_postal_codes_by_prefix(prefix):
     start_time = time.time()
     postal_lists = generate_postal_list(prefix)
-    
     # splitting postal list into half (5000) to reduce timeout errors
     l = len(postal_lists)//2
     postal_list_1 = postal_lists[:l]
@@ -84,41 +79,3 @@ if __name__ == "__main__":
     else:
         prefix = str(prefix)
         get_all_postal_codes_by_prefix(prefix)
-
-#get_all_postal_codes_by_prefix('02')
-# postal district 01
-#get_all_postal_codes_by_prefix('01')
-# get_all_postal_codes_by_prefix('02')
-#get_all_postal_codes_by_prefix('03')
-# get_all_postal_codes_by_prefix('04')
-# get_all_postal_codes_by_prefix('05')
-# get_all_postal_codes_by_prefix('06')
-# postal district 02
-# get_all_postal_codes_by_prefix('07')
-# get_all_postal_codes_by_prefix('08')
-# postal district 03
-# get_all_postal_codes_by_prefix('14')
-# get_all_postal_codes_by_prefix('15')
-# get_all_postal_codes_by_prefix('16')
-# postal district 04
-# get_all_postal_codes_by_prefix('09')
-# get_all_postal_codes_by_prefix('10')
-# postal_district 05
-# get_all_postal_codes_by_prefix('11')
-# get_all_postal_codes_by_prefix('12')
-# get_all_postal_codes_by_prefix('13')
-# postal_district 06
-# get_all_postal_codes_by_prefix('17')
-# postal_district 07
-# get_all_postal_codes_by_prefix('18')
-# get_all_postal_codes_by_prefix('19')
-# postal_district 08
-# get_all_postal_codes_by_prefix('20')
-# get_all_postal_codes_by_prefix('21')
-# postal_district 09
-# get_all_postal_codes_by_prefix('22')
-# get_all_postal_codes_by_prefix('23')
-# postal district 10
-# get_all_postal_codes_by_prefix('25')
-# get_all_postal_codes_by_prefix('26')
-# get_all_postal_codes_by_prefix('27')
